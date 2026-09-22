@@ -123,7 +123,7 @@ async function moderate(action,payload){
 }
 
 function bind(){
- $("#login")?.addEventListener("submit",async e=>{e.preventDefault(); const err=$("#login-error"); err.classList.add("hidden"); const {error}=await supabase.auth.signInWithPassword({email:$("#email").value,password:$("#password").value}); if(error){err.textContent=error.message;err.classList.remove("hidden");}});
+ $("#login")?.addEventListener("submit",async e=>{e.preventDefault(); const err=$("#login-error"); err.classList.add("hidden"); const {error}=await supabase.auth.signInWithPassword({email:$("#email").value,password:$("#password").value}); if(error){err.textContent=error.message;err.classList.remove("hidden"); return;} await boot();});
  $("#logout")?.addEventListener("click",async()=>{await supabase.auth.signOut();state.session=null;state.role=null;render();});
  document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>{state.section=b.dataset.section;state.search="";render();}));
  $("#search")?.addEventListener("input",e=>{state.search=e.target.value; const y=window.scrollY; render(); window.scrollTo(0,y);});
