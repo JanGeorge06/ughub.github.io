@@ -1,7 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.0";
 
 const SUPABASE_URL = "https://qvakretcgbjvwvdlvrmo.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFub24iLCJpYXQiOjE3NTQ5MDQ4NjUsImV4cCI6MjA3MDQ4MDg2NX0.rK2XiwQPaMzTVUnkcCOiiH66fcKrbLwbIfOz6PD17Ys";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2YWtyZXRjZ2Jqdnd2ZGx2cm1vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDQ4NjUsImV4cCI6MjA3MDQ4MDg2NX0.rK2XiwQPaMzTVUnkcCOiiH66fcKrbLwbIfOz6PD17Ys";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const state = { session:null, role:null, section:"overview", users:[], campaigns:[], applications:[], categories:[], logs:[], userMap:new Map(), campaignMap:new Map(), applicationMap:new Map(), search:"" };
